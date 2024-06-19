@@ -25,8 +25,7 @@ app.get('/calcular',(req,res)=>{
             res.json("Esta es una cedula ecuatoriana")
         }else{
             var verificar = 10 - modulo;
-            var comprobar = verificar - ultimoDigito;
-            if( comprobar == 0){res.json("Esta es una cedula ecuatoriana")}
+            if(verificar == ultimoDigito){res.json("Esta es una cedula ecuatoriana")}
             else{res.json("Esta no es una cedula ecuatoriana")}
         }
         
