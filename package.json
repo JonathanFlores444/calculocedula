@@ -1,0 +1,19 @@
+{
+  "name": "calculocedula",
+  "version": "1.0.0",
+  "description": "calculo de la cedula en node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanFlores444/calculocedula.git"
+  },
+  "author": "Jonathan Flores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanFlores444/calculocedula/issues"
+  },
+  "homepage": "https://github.com/JonathanFlores444/calculocedula#readme"
+}
