@@ -4,6 +4,7 @@ const app = express();
 
 app.get('/calcular',(req,res)=>{
     var cedula=(req.query.c);
+    var ultimoDigito = parseInt(cedula.substring(9,10));
     if(cedula.length == 10){
         var sumaImpar = 0;
         for (var i = 0; i < 9; i = i + 2) { 
@@ -19,7 +20,16 @@ app.get('/calcular',(req,res)=>{
                         parseInt(cedula.substring(5,6)) + 
                         parseInt(cedula.substring(7,8));
 
-        res.json(sumaImpar+" "+sumaPar);
+        var modulo = (sumaImpar + sumaPar) % 10;
+        if(modulo == 0){
+            res.json("Esta es una cedula ecuatoriana")
+        }else{
+            var verificar = 10 - modulo;
+            var comprobar = verificar - ultimoDigito;
+            if( comprobar == 0){res.json("Esta es una cedula ecuatoriana")}
+            else{res.json("Esta no es una cedula ecuatoriana")}
+        }
+        
     }else {
         res.json("La cedula debe tener 10 digitos");
     }
